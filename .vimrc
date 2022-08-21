@@ -19,7 +19,7 @@ Plugin 'scrooloose/nerdtree'
 call vundle#end()            " required
 
 let g:gruvbox_contrast_light = 'hard'
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'medium'
 let g:solarized_termcolors=256
 syntax enable
 set background=dark    " Setting dark mode
@@ -27,20 +27,20 @@ set background=dark    " Setting dark mode
 autocmd vimenter * ++nested colorscheme gruvbox     " Setting gruvbox theme
 "autocmd vimenter * ++nested colorscheme solarized  " Setting solarized theme
 
-"Transparent background
+"Allow Alacritty to use transparent background
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-autocmd vimenter * hi NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+autocmd vimenter * hi NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
-if &term =~ "xterm\\|rxvt"
-  " use an orange cursor in insert mode
-  let &t_si = "\<esc>]12;orange\x7"
-  " use a red cursor otherwise
-  let &t_ei = "\<Esc>]12;red\x7"
-  silent !echo -ne "\033]12;red\007"
-  " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal
-endif
+"if &term =~ \"xterm\\|rxvt"
+"  " use an orange cursor in insert mode
+"  let &t_si = \"\<esc>]12;orange\x7"
+"  " use a red cursor otherwise
+"  let &t_ei = \"\<Esc>]12;red\x7"
+"  silent !echo -ne \"\033]12;red\007"
+"  " reset cursor when vim exits
+"  autocmd VimLeave * silent !echo -ne \"\033]112\007"
+"  " use \003]12;gray\007 for gnome-terminal
+"endif
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -66,6 +66,7 @@ set autoindent
 set shiftwidth=4  "this is the level of autoindent, adjust to taste
 set ruler
 set number
+set relativenumber
 set backspace=indent,eol,start
 set visualbell
 "Below configs are from 'Daniel Miessler's VIM Guide'
@@ -75,10 +76,12 @@ set noswapfile
 set hlsearch
 set ignorecase
 set incsearch
+set cursorline
+set nocompatible
+set path+=**
+set wildmenu
+set nowrap
 " Uncomment below to make screen not flash on error
 " set vb t_vb=""
 command Pretty %!jq .
 command T NERDTree
-
-set path=+**
-set wildmenu
