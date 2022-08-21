@@ -33,20 +33,20 @@ window:
   #    y: 0
   # 'Maximized' on Laptop Screen (Windows X1 Carbon)
   # 'Maximized' on Laptop Screen (MBP 16 inch)
-  dimensions:
-      columns: 180
-      lines: 45
-  position:
-      x: 0
-      y: 0
+  #dimensions:
+  #    columns: 180
+  #    lines: 45
+  #position:
+  #    x: 0
+  #    y: 0
   # 'Maximized' on Laptop Screen (MBP 16 inch)
   # 'Windowed' (center) on Laptop Screen (MBP 16 inch)
-  #dimensions:
-  #  columns: 150
-  #  lines: 40
-  #position:
-  #  x: 550
-  #  y: 175
+  dimensions:
+    columns: 150
+    lines: 40
+  position:
+    x: 335
+    y: 333
   # 'Windowed' (center) on Laptop Screen (MBP 16 inch)
   padding:
     x: 10
@@ -55,7 +55,7 @@ window:
   opacity: 0.95
   title: <200e>
   dynamic_title: false
-  startup_mode: Maximized
+  startup_mode: Windowed
 
 scrolling:
   history: 10000
